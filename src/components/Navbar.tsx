@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./NavLink";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -49,8 +49,11 @@ export default function NavBar() {
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.2,
-      }
+      },
     },
+    exit: {
+      x: "-100vw"
+    }
   };
 
   const listItemVariants = {
@@ -62,7 +65,7 @@ export default function NavBar() {
       x: 0,
       opacity: 1,
     },
-  }
+  };
 
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36">
@@ -106,7 +109,7 @@ export default function NavBar() {
       {/* responsive menu */}
       <div className="md:hidden">
         <button
-          className="w-10 h-8 flex flex-col justify-between relative z-50"
+          className="w-10 h-8 flex flex-col justify-between relative z-[70]"
           onClick={() => setOpen((prev) => !prev)}
         >
           <motion.div
@@ -126,22 +129,23 @@ export default function NavBar() {
           ></motion.div>
         </button>
         {/* menu list */}
-        {open && (
-          <motion.div
-            className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-3xl z-40"
-            variants={listVariants}
-            initial="closed"
-            animate="opened"
-          >
-            {menuItems.map((item) => (
-              <motion.div key={item.url} variants={listItemVariants}>
-                <Link href={item.url}>
-                  {item.title}
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
+        <AnimatePresence mode="wait">
+          {open && (
+            <motion.div
+              className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-3xl z-[60]"
+              variants={listVariants}
+              initial="closed"
+              animate="opened"
+              exit='exit'
+            >
+              {menuItems.map((item) => (
+                <motion.div key={item.url} variants={listItemVariants}>
+                  <Link href={item.url}>{item.title}</Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
