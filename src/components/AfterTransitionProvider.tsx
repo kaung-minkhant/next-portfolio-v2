@@ -1,10 +1,20 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useIsPresent } from "framer-motion";
+import { useEffect } from "react";
+
 export default function AfterTransitionProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const isPresent = useIsPresent();
+  useEffect(() => {
+    if (isPresent) {
+      (
+        document.getElementsByClassName("overlay")[0] as HTMLElement
+      ).style.display = "flex";
+    }
+  }, [isPresent]);
   return (
     <motion.div
       className="h-full"

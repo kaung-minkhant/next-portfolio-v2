@@ -4,7 +4,9 @@ import Skills from "@/components/Skills";
 
 export default function About() {
   return (
-    <div className="h-full">
+    <div className="h-full overlay" style={{
+      display: 'none'
+    }}>
       {/* container */}
       <div className="">
         {/* text container */}

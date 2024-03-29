@@ -70,17 +70,17 @@ export default function NavBar() {
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36">
       {/* medium screen links */}
-      <div className="hidden md:flex gap-5 w-1/3 text-lg">
+      <div className="hidden md:flex justify-between md:w-1/2 lg:w-2/5 text-lg">
         {menuItems.map((item) => (
           <NavLink key={item.url} link={item} />
         ))}
       </div>
       {/* logo */}
-      <div className="md:hidden lg:flex w-1/3 justify-center">
+      <div className="md:hidden lg:flex w-1/5 justify-center">
         <Link href={"/"}>LOGO</Link>
       </div>
       {/* medium screen icons */}
-      <div className="hidden md:flex gap-5 w-1/3 justify-end">
+      <div className="hidden md:flex gap-5 w-1/2 lg:w-2/5 justify-end">
         <Link href={"/"}>
           <Image
             src={"/github.png"}

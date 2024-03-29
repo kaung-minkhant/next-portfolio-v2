@@ -1,5 +1,5 @@
 export default function Portfolio() {
   return (
-    <div>Portfolio</div>
+    <div className="overlay" style={{ display: "none" }}>Portfolio</div>
   )
 }
