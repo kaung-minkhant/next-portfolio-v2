@@ -8,7 +8,7 @@ export default function Home() {
         <Image src={"/hero.png"} fill alt={"hero image"} className="object-contain" />
       </div>
       {/* text container */}
-      <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-3 md:gap-8 items-center justify-center">
+      <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-3 md:gap-6 lg:gap-8 items-center justify-center">
         {/* title */}
         <h1 className="text-3xl md:text-5xl font-bold">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
         {/* description */}
