@@ -51,7 +51,7 @@ export default function TransitionProvider({
         <div className="h-24">
           <NavBar />
         </div>
-        <div className="h-[calc(100vh-6rem)]">
+        <div className="min-h-[calc(100vh-6rem)]">
           <AfterTransitionProvider>{children}</AfterTransitionProvider>
         </div>
       </div>

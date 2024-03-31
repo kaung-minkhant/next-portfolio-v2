@@ -9,7 +9,7 @@ export default function AfterTransitionProvider({
 }) {
   const isPresent = useIsPresent();
   useEffect(() => {
-    if (isPresent) {
+    if (isPresent && document.getElementsByClassName("overlay")[0]) {
       (
         document.getElementsByClassName("overlay")[0] as HTMLElement
       ).style.display = "flex";

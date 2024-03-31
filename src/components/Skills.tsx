@@ -1,4 +1,7 @@
+"use client";
+import { useRef } from "react";
 import ScrollMouse from "./ScrollMouse";
+import { motion, useInView } from "framer-motion";
 
 function Skill({ skill }: { skill: string }) {
   return (
@@ -8,6 +11,10 @@ function Skill({ skill }: { skill: string }) {
   );
 }
 export default function Skills() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isSkillInView = useInView(ref, {
+    margin: "-150px",
+  });
   const skills = [
     "JavaScript",
     "HTML",
@@ -17,16 +24,32 @@ export default function Skills() {
     "React",
     "NextJS",
   ];
+  const skillVariants = {
+    initial: { x: "-100vw" },
+    animate: isSkillInView ? { x: 0, transition: { delay: 0.2 } } : {},
+  };
   return (
-    <div className="flex flex-col gap-12 justify-center">
+    <div className="flex flex-col gap-12 justify-center" ref={ref}>
       {/* title */}
-      <h1 className="text-2xl font-bold">Skills</h1>
+      <motion.h1
+        className="text-2xl font-bold"
+        variants={skillVariants}
+        initial='initial'
+        animate='animate'
+      >
+        Skills
+      </motion.h1>
       {/* skill list  */}
-      <div className="flex gap-4 flex-wrap">
+      <motion.div
+        className="flex gap-4 flex-wrap"
+        variants={skillVariants}
+        initial='initial'
+        animate='animate'
+      >
         {skills.map((skill) => (
           <Skill key={skill} skill={skill} />
         ))}
-      </div>
+      </motion.div>
       {/* scroll svg */}
       <div className="">
         <ScrollMouse />
