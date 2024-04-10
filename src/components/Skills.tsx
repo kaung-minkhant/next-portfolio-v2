@@ -13,7 +13,7 @@ function Skill({ skill }: { skill: string }) {
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);
   const isSkillInView = useInView(ref, {
-    margin: "-150px",
+    margin: "-120px",
   });
   const skills = [
     "JavaScript",
