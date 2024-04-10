@@ -1,6 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +21,9 @@ export default function Portfolio() {
     ["0%", `-${100 - 100 / (5 + 1)}%`]
   );
   // useMotionValueEvent(x, "change", (latest) => {
+  //   console.log(latest);
+  // });
+  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
   //   console.log(latest);
   // });
   const portfolioItems: PortfolioItem[] = [
@@ -69,10 +77,10 @@ export default function Portfolio() {
         <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl">
           My Works
         </div>
-        <div className="sticky border-2 w-screen top-0 flex items-center h-screen overflow-hidden bg-gray-300">
+        <div className="sticky w-screen top-0 flex items-center h-screen overflow-hidden">
           <div className="">
             <motion.div
-              className="flex items-center w-fit border-2 border-green-500"
+              className="flex items-center w-fit border-2"
               style={{ x }}
             >
               <div className="h-screen w-screen flex items-center justify-center px-24 shrink-0"></div>
@@ -86,11 +94,20 @@ export default function Portfolio() {
                       {item.title}
                     </h1>
                     <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                      <Image src={item.img} alt={item.title} fill />
+                      <Image
+                        src={item.img}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
                     </div>
-                    <p className="w-80 md:w-96 lg:w-[500px] xl:w-[600px]">{item.desc}</p>
+                    <p className="w-80 md:w-96 lg:w-[500px] xl:w-[600px]">
+                      {item.desc}
+                    </p>
                     <Link href={item.link} className="flex justify-end">
-                      <button className="p-2 text-sm md:p-4 md:text-lg bg-white text-gray-500 font-semibold rounded">See Demo</button>
+                      <button className="p-2 text-sm md:p-4 md:text-lg bg-white text-gray-500 font-semibold rounded">
+                        See Demo
+                      </button>
                     </Link>
                   </div>
                 </div>
@@ -122,7 +139,7 @@ export default function Portfolio() {
           </motion.svg>
           <Link
             className="w-16 h-16 md:w-28 md:h-28 absolute inset-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
-            href={"/"}
+            href={"/contact"}
           >
             Hire Me
           </Link>

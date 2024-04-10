@@ -17,7 +17,7 @@ export default function AfterTransitionProvider({
   }, [isPresent]);
   return (
     <motion.div
-      className="h-full"
+      className="flex-grow flex flex-col relative"
       initial={{ y: "-250vh" }}
       animate={{ y: 0 }}
       transition={{ duration: 1 }}

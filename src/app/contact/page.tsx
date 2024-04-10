@@ -3,12 +3,12 @@ import ContactHeader from "@/components/ContactHeader";
 
 export default function Portfolio() {
   return (
-    <div className="overlay h-full overflow-auto" style={{ display: "none" }}>
-      <div className="h-full w-full flex flex-col lg:flex-row px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36">
-        <div className="h-1/2 w-full lg:h-full lg:w-1/2 flex justify-center items-center">
+    <div className="overlay flex-grow flex flex-col" style={{ display: "none" }}>
+      <div className="px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36 flex-grow flex-col flex items-center lg:flex-row">
+        <div className="flex justify-center items-center flex-grow">
           <ContactHeader />
         </div>
-        <div className="h-1/2 w-full lg:h-full lg:w-1/2 flex flex-col justify-center">
+        <div className="flex flex-col justify-center flex-grow w-3/4 lg:w-fit">
           {/* <ContactForm /> */}
           <ContactFormSubmit />
         </div>

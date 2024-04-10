@@ -15,8 +15,6 @@ export async function sendEmail(
   const message = formData.get("message");
   const name = formData.get("user_name");
 
-  console.log({ email, message });
-
   const html = `
   <html>
     <body>

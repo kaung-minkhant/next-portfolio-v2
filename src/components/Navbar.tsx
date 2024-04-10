@@ -68,22 +68,17 @@ export default function NavBar() {
   };
 
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36">
-      {/* medium screen links */}
-      <div className="hidden md:flex justify-between md:w-1/2 lg:w-2/5 text-lg">
+    <div className="h-full flex items-center justify-between px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36 bg-transparent">
+      <div className="hidden md:flex  justify-start md:gap-4 lg:gap-7 xl:gap-9 md:w-2/3 lg:w-3/5 text-lg bg-transparent">
         {menuItems.map((item) => (
           <NavLink key={item.url} link={item} />
         ))}
       </div>
-      {/* logo */}
-      <div className="md:hidden lg:flex w-1/5 justify-center">
-        <Link href={"/"}>LOGO</Link>
-      </div>
-      {/* medium screen icons */}
-      <div className="hidden md:flex gap-5 w-1/2 lg:w-2/5 justify-end">
+      <div className="hidden md:flex gap-6 w-1/2 md:w-1/3 lg:w-1/5 justify-end">
         <Link href={"/"}>
           <Image
             src={"/github.png"}
+            priority={true}
             width={24}
             height={24}
             alt={"github icon"}
@@ -106,7 +101,6 @@ export default function NavBar() {
           />
         </Link>
       </div>
-      {/* responsive menu */}
       <div className="md:hidden">
         <button
           className="w-10 h-8 flex flex-col justify-between relative z-[70]"
@@ -128,7 +122,6 @@ export default function NavBar() {
             animate={open ? "opened" : "closed"}
           ></motion.div>
         </button>
-        {/* menu list */}
         <AnimatePresence mode="wait">
           {open && (
             <motion.div

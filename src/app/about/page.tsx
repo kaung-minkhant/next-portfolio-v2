@@ -3,14 +3,14 @@ import Biography from "@/components/Biography";
 import Brain from "@/components/Brain";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
-import { useScroll } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
   const [show, setShow] = useState(false);
   const { scrollYProgress } = useScroll({
-    container: ref,
+    target: ref,
   });
   useEffect(() => {
     setShow(true);
@@ -18,7 +18,7 @@ export default function About() {
   return (
     // <ScrollProvider container={document.getElementsByClassName('about')[0] as HTMLElement}>
     <div
-      className="h-full overflow-auto lg-flex overlay"
+      className="flex-grow lg-flex overlay relative"
       ref={ref}
       style={{
         display: "none",
@@ -34,7 +34,7 @@ export default function About() {
         <Experience />
       </div>
       {/* svg container */}
-      <div className="hidden lg:block w-1/3 xl:w-1/2 sticky top-0">
+      <div className="hidden lg:block w-1/3 xl:w-1/2 sticky top-[6rem] h-[calc(100vh-6rem)] self-start">
         {show && <Brain scrollYProgress={scrollYProgress} />}
       </div>
     </div>

@@ -6,11 +6,9 @@ import ContactFormSubmitButton from "./ContactFormSubmitButton";
 
 const initialState = {
   message: "",
-  error: "",
 };
 export default function ContactFormSubmit() {
   const [state, formAction] = useFormState(sendEmail, initialState);
-  console.log({ state });
   return (
     <form
       action={formAction}

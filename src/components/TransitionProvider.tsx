@@ -14,7 +14,7 @@ export default function TransitionProvider({
     <AnimatePresence mode="wait">
       <div
         key={pathname}
-        className="w-screen h-screen bg-gradient-to-b from-blue-200 to-red-300"
+        className="w-screen min-h-screen bg-gradient-to-b from-blue-200 to-red-300"
       >
         <motion.div
           className="bg-black h-0 w-screen fixed rounded-b-[60px] z-40"
@@ -48,10 +48,10 @@ export default function TransitionProvider({
           }}
         />
 
-        <div className="h-24">
+        <div className="h-24 nav-container">
           <NavBar />
         </div>
-        <div className="min-h-[calc(100vh-6rem)] h-[calc(100vh-6rem)]">
+        <div className="min-h-[calc(100vh-6rem)] flex flex-col">
           <AfterTransitionProvider>{children}</AfterTransitionProvider>
         </div>
       </div>
