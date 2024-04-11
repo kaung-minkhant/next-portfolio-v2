@@ -16,13 +16,21 @@ export default function Skills() {
     margin: "-120px",
   });
   const skills = [
-    "JavaScript",
     "HTML",
     "CSS",
     "Bootstrap",
     "Tailwindcss",
+    "JavaScript",
     "React",
     "NextJS",
+    'VewJS',
+    'ThreeJS',
+    'FramerMotion',
+    'NodeJS',
+    'ExpressJS',
+    'Python',
+    'Docker',
+    'AWS',
   ];
   const skillVariants = {
     initial: { x: "-100vw" },

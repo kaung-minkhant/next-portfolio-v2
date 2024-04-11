@@ -12,6 +12,23 @@ export default function Experience() {
     initial: { x: "-100vw" },
     animate: isInView ? { x: 0, transition: { delay: 0.2 } } : {},
   };
+  const experience = [
+    {
+    title: 'Junior Full Stack Developer',
+    company: 'Ackaya Tech Co. Ltd',
+    description: 'I develop and maintain internal applications using React and Vue and worked under a SCRUM team. As a backend, I had to setup and develop serverless functions and deployed them to AWS.',
+    from: 'Sept 2023',
+    to: 'March 2024'
+  },
+    {
+    title: 'Junior Full Stack Developer (NextJS)',
+    company: '',
+    description: 'My main role was management. I wrote some  scripts that helps automate the process',
+    from: '2021',
+    to: '2023'
+  },
+
+]
   return (
     <div className="flex flex-col gap-12 justify-between pb-8" ref={ref}>
       <motion.h1

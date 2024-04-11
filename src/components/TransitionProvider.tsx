@@ -14,7 +14,7 @@ export default function TransitionProvider({
     <AnimatePresence mode="wait">
       <div
         key={pathname}
-        className="w-screen min-h-screen bg-gradient-to-b from-blue-200 to-red-300"
+        className="w-screen min-h-screen bg-gradient-to-b from-blue-200 to-red-300 overscroll-none"
       >
         <motion.div
           className="bg-black h-0 w-screen fixed rounded-b-[60px] z-40"
