@@ -10,7 +10,7 @@ export default function Experience() {
   });
   const experienceVariants = {
     initial: { x: "-100vw" },
-    animate: isInView ? { x: 0, transition: { delay: 0.2 } } : {},
+    animate: isInView ? { x: 0, transition: { delay: 0.1, type: "spring", mass: 1, stiffness: 80, damping: 13 } } : {},
   };
   const experience = [
     {

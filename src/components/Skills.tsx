@@ -23,42 +23,50 @@ export default function Skills() {
     "JavaScript",
     "React",
     "NextJS",
-    'VewJS',
-    'ThreeJS',
-    'FramerMotion',
-    'NodeJS',
-    'ExpressJS',
-    'Python',
-    'Docker',
-    'AWS',
+    "VewJS",
+    "ThreeJS",
+    "FramerMotion",
+    "NodeJS",
+    "ExpressJS",
+    "Python",
+    "Docker",
+    "AWS",
   ];
   const skillVariants = {
     initial: { x: "-100vw" },
-    animate: isSkillInView ? { x: 0, transition: { delay: 0.2 } } : {},
+    animate: isSkillInView
+      ? {
+          x: 0,
+          transition: { delay: 0.1, type: "spring", mass: 1, stiffness: 80, damping: 13 },
+        }
+      : {},
   };
   return (
     <div className="flex flex-col gap-12 justify-center" ref={ref}>
-      {/* title */}
       <motion.h1
         className="text-2xl font-bold"
         variants={skillVariants}
-        initial='initial'
-        animate='animate'
+        initial="initial"
+        animate="animate"
+        // transition={{
+        //   type: "spring",
+        //   d
+        //   mass: 1,
+        //   stiffness: 1,
+        // }}
       >
         Skills
       </motion.h1>
-      {/* skill list  */}
       <motion.div
         className="flex gap-4 flex-wrap"
         variants={skillVariants}
-        initial='initial'
-        animate='animate'
+        initial="initial"
+        animate="animate"
       >
         {skills.map((skill) => (
           <Skill key={skill} skill={skill} />
         ))}
       </motion.div>
-      {/* scroll svg */}
       <div className="">
         <ScrollMouse />
       </div>

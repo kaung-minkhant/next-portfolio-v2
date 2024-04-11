@@ -18,14 +18,14 @@ export default function About() {
   return (
     // <ScrollProvider container={document.getElementsByClassName('about')[0] as HTMLElement}>
     <div
-      className="flex-grow lg-flex overlay relative"
+      className="flex-grow lg:flex overlay relative"
       ref={ref}
       style={{
         display: "none",
       }}
     >
       {/* text container */}
-      <div className="p-4 sm:p-9 md:p-14 lg:p-20 xl:p-36 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 h-full lg:w-2/3 xl:w-1/2">
+      <div className="p-4 sm:p-9 md:p-14 lg:p-20 lg:py-14 xl:p-36 xl:py-24 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 h-full flex-grow lg:basis-[15rem] xl:basis-[38rem]">
         {/* biography */}
         <Biography />
         {/* skills */}
@@ -34,7 +34,7 @@ export default function About() {
         <Experience />
       </div>
       {/* svg container */}
-      <div className="hidden lg:block w-1/3 xl:w-1/2 sticky top-[6rem] h-[calc(100vh-6rem)] self-start">
+      <div className="hidden lg:block sticky top-[6rem] h-[calc(100vh-6rem)] self-start flex-grow lg:basis-0 xl:basis-1">
         {show && <Brain scrollYProgress={scrollYProgress} />}
       </div>
     </div>

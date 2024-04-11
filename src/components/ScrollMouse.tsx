@@ -1,6 +1,9 @@
 'use client'
 import {motion} from 'framer-motion'
-export default function ScrollMouse() {
+interface Props {
+  sizeSub?: number 
+}
+export default function ScrollMouse({sizeSub=10}: Props) {
   const variants = {
     initial: {
       opacity: 0.2, y: 0,
@@ -19,8 +22,8 @@ export default function ScrollMouse() {
       variants={variants}
       initial='initial'
       animate='animate'
-      width={40 - 10}
-      height={62 - 10}
+      width={40 - sizeSub}
+      height={62 - sizeSub}
       viewBox="0 0 40 62"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

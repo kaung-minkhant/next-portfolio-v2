@@ -103,7 +103,7 @@ export default function NavBar() {
       </div>
       <div className="md:hidden">
         <button
-          className="w-10 h-8 flex flex-col justify-between relative z-[70]"
+          className="w-10 h-8 flex flex-col justify-between relative z-[1]"
           onClick={() => setOpen((prev) => !prev)}
         >
           <motion.div
@@ -125,7 +125,7 @@ export default function NavBar() {
         <AnimatePresence mode="wait">
           {open && (
             <motion.div
-              className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-3xl z-[60]"
+              className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col justify-center items-center gap-8 text-3xl z-[0]"
               variants={listVariants}
               initial="closed"
               animate="opened"

@@ -7,7 +7,6 @@
   /* background-color: transparent; */
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.18);
   position: sticky;
-  z-index: 20;
   top: 0;
   background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
   /* background-color: red; */
