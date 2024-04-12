@@ -10,25 +10,37 @@ export default function Experience() {
   });
   const experienceVariants = {
     initial: { x: "-100vw" },
-    animate: isInView ? { x: 0, transition: { delay: 0.1, type: "spring", mass: 1, stiffness: 80, damping: 13 } } : {},
+    animate: isInView
+      ? {
+          x: 0,
+          transition: {
+            delay: 0.1,
+            type: "spring",
+            mass: 1,
+            stiffness: 80,
+            damping: 13,
+          },
+        }
+      : {},
   };
   const experience = [
     {
-    title: 'Junior Full Stack Developer',
-    company: 'Ackaya Tech Co. Ltd',
-    description: 'I develop and maintain internal applications using React and Vue and worked under a SCRUM team. As a backend, I had to setup and develop serverless functions and deployed them to AWS.',
-    from: 'Sept 2023',
-    to: 'March 2024'
-  },
+      title: "Junior Full Stack Developer",
+      company: "Ackaya Tech Co. Ltd",
+      description:
+        "I develop and maintain internal applications using React and Vue and worked under a SCRUM team. As a backend, I had to setup and develop serverless functions and deployed them to AWS.",
+      from: "Sept 2023",
+      to: "March 2024",
+    },
     {
-    title: 'Junior Full Stack Developer (NextJS)',
-    company: '',
-    description: 'My main role was management. I wrote some  scripts that helps automate the process',
-    from: '2021',
-    to: '2023'
-  },
-
-]
+      title: "Junior Full Stack Developer (NextJS)",
+      company: "",
+      description:
+        "My main role was management. I wrote some  scripts that helps automate the process",
+      from: "2021",
+      to: "2023",
+    },
+  ];
   return (
     <div className="flex flex-col gap-12 justify-between pb-8" ref={ref}>
       <motion.h1
@@ -47,10 +59,20 @@ export default function Experience() {
         initial="initial"
         animate="animate"
       >
-        {/* list item */}
-        <ExperienceItem />
-        <ExperienceItem position="right" />
-        <ExperienceItem />
+        {experience.map((item, index) => (
+          <ExperienceItem
+            company={item.company}
+            description={item.description}
+            from={item.from}
+            key={index}
+            title={item.title}
+            to={item.to}
+            position={index % 2 !== 0 ? "right" : "left"}
+          />
+        ))}
+        {/* <ExperienceItem company={experience[0].company} description={experience[0].description} from={experience[0].from}  title={experience[0].title} to={experience[0].to} />
+        <ExperienceItem position="right" company={experience[0].company} description={experience[0].description} from={experience[0].from} title={experience[0].title} to={experience[0].to}  />
+        <ExperienceItem company={experience[0].company} description={experience[0].description} from={experience[0].from} title={experience[0].title} to={experience[0].to}  /> */}
       </motion.div>
     </div>
   );

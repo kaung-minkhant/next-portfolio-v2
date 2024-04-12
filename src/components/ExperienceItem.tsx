@@ -1,7 +1,19 @@
 interface ItemProps {
   position?: "left" | "right";
+  title: string;
+  company: string;
+  description: string;
+  from: string;
+  to: string;
 }
-const Item = ({ position }: Props) => {
+const Item = ({
+  position,
+  title,
+  company,
+  description,
+  from,
+  to,
+}: ItemProps) => {
   return (
     <>
       <div
@@ -9,15 +21,12 @@ const Item = ({ position }: Props) => {
           position === "left" ? "rounded-s-md" : "rounded-e-md"
         } `}
       >
-        Co-founder
+        {title}
       </div>
-      <div className="p-3 text-sm italic">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
-        aspernatur?
-      </div>
-      <div className="p-3 text-red-400 text-sm font-semibold">2021 2024</div>
+      <div className="p-3 text-sm italic">{description}</div>
+      <div className="p-3 text-red-400 text-sm font-semibold">{`${from} - ${to}`}</div>
       <div className="text-sm font-semibold p-1 rounded bg-white w-fit">
-        Lat Twae
+        {company}
       </div>
     </>
   );
@@ -25,12 +34,33 @@ const Item = ({ position }: Props) => {
 
 interface Props {
   position?: "left" | "right";
+  title: string;
+  company: string;
+  description: string;
+  from: string;
+  to: string;
 }
-export default function ExperienceItem({ position = "left" }: Props) {
+export default function ExperienceItem({
+  position = "left",
+  title,
+  company,
+  description,
+  from,
+  to,
+}: Props) {
   return (
     <div className="flex justify-between h-fit">
       <div className="flex-grow basis-0 hidden sm:block">
-        {position === "left" && <Item position={position} />}
+        {position === "left" && (
+          <Item
+            position={position}
+            company={company}
+            description={description}
+            from={from}
+            to={to}
+            title={title}
+          />
+        )}
       </div>
       <div className="flex justify-center w-10">
         <div className="w-1 h-full bg-gray-600 rounded relative">
@@ -39,12 +69,26 @@ export default function ExperienceItem({ position = "left" }: Props) {
       </div>
       {position === "left" && (
         <div className="flex-grow basis-0 block sm:hidden py-5">
-          <Item position={position} />
+          <Item
+            position={"right"}
+            company={company}
+            description={description}
+            from={from}
+            to={to}
+            title={title}
+          />
         </div>
       )}
       {position === "right" && (
         <div className="flex-grow basis-0 py-5">
-          <Item position={position} />
+          <Item
+            position={position}
+            company={company}
+            description={description}
+            from={from}
+            to={to}
+            title={title}
+          />
         </div>
       )}
       {position === "left" && (
