@@ -74,10 +74,10 @@ export default function Portfolio() {
       style={{ display: "none", flexDirection: "column" }}
     >
       <div className="h-[600vh] w-screen relative" ref={containerRef}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl">
+        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-6xl md:text-7xl lg:text-8xl">
           My Works
         </div>
-        <div className="sticky w-screen top-0 flex items-center h-screen overflow-hidden">
+        <div className="sticky w-screen top-[6rem] flex items-center h-screen overflow-hidden">
           <div className="">
             <motion.div
               className="flex items-center w-fit border-2"
@@ -86,14 +86,14 @@ export default function Portfolio() {
               <div className="h-screen w-screen flex items-center justify-center px-24 shrink-0"></div>
               {portfolioItems.map((item) => (
                 <div
-                  className="h-screen w-screen flex items-center justify-center px-24 shrink-0"
+                  className="h-screen w-screen flex items-center justify-center px-0 -mt-10 lg:-mt-24 shrink-0"
                   key={item.id}
                 >
-                  <div className="flex flex-col gap-8 text-black">
-                    <h1 className="text-lg font-bold md:text-2xl lg:text-4xl">
+                  <div className="flex flex-col gap-6 text-black">
+                    <h1 className="font-bold text-2xl sm:text-3xl">
                       {item.title}
                     </h1>
-                    <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                    <div className="relative w-80 h-56 sm:w-[350px] sm:h-[210px] md:w-96 md:h-64 lg:w-[500px] lg:h-[350px]">
                       <Image
                         src={item.img}
                         alt={item.title}
@@ -102,7 +102,7 @@ export default function Portfolio() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
-                    <p className="w-80 md:w-96 lg:w-[500px] xl:w-[600px]">
+                    <p className="w-80 sm:w-[350px] md:w-96 lg:w-[500px]">
                       {item.desc}
                     </p>
                     <Link href={item.link} className="flex justify-end">
@@ -117,12 +117,12 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-      <div className="h-screen w-screen flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="text-6xl">Do you have a project?</h1>
+      <div className="h-screen w-screen flex flex-col gap-8 items-center justify-center text-center pt-[6rem]">
+        <h1 className="text-3xl sm:text-5xl">Do you have a project?</h1>
         <div className="relative">
           <motion.svg
             viewBox="0 0 300 300"
-            className="w-64 h-64 md:w-[500px] md:h-[500px]"
+            className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           >
@@ -139,7 +139,7 @@ export default function Portfolio() {
             </text>
           </motion.svg>
           <Link
-            className="w-16 h-16 md:w-28 md:h-28 absolute inset-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
+            className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] absolute inset-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
             href={"/contact"}
           >
             Hire Me

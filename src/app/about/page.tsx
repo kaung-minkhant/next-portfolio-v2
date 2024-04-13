@@ -25,7 +25,7 @@ export default function About() {
       }}
     >
       {/* text container */}
-      <div className="p-4 sm:p-9 md:p-14 lg:p-20 lg:py-14 xl:p-36 xl:py-24 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 h-full flex-grow lg:basis-[15rem] xl:basis-[38rem]">
+      <div className="p-4 sm:p-9 md:p-14 lg:p-20 lg:py-14 xl:p-36 xl:py-24 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 h-full flex-grow lg:basis-[24rem] xl:basis-[38rem]">
         {/* biography */}
         <Biography />
         {/* skills */}

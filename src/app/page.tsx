@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div
-      className="overlay flex flex-col lg:flex-row flex-grow px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36 relative z-[0]"
+      className="overlay flex flex-col lg:flex-row flex-grow px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36 relative"
       style={{
         display: "none",
       }}

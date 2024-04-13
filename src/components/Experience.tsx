@@ -34,9 +34,9 @@ export default function Experience() {
     },
     {
       title: "Junior Full Stack Developer (NextJS)",
-      company: "",
+      company: "Digital Copilot",
       description:
-        "My main role was management. I wrote some  scripts that helps automate the process",
+        "My main role was management. I wrote some scripts that helps automate the process",
       from: "2021",
       to: "2023",
     },
@@ -70,9 +70,6 @@ export default function Experience() {
             position={index % 2 !== 0 ? "right" : "left"}
           />
         ))}
-        {/* <ExperienceItem company={experience[0].company} description={experience[0].description} from={experience[0].from}  title={experience[0].title} to={experience[0].to} />
-        <ExperienceItem position="right" company={experience[0].company} description={experience[0].description} from={experience[0].from} title={experience[0].title} to={experience[0].to}  />
-        <ExperienceItem company={experience[0].company} description={experience[0].description} from={experience[0].from} title={experience[0].title} to={experience[0].to}  /> */}
       </motion.div>
     </div>
   );

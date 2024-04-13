@@ -12,9 +12,9 @@ export default function ContactFormSubmit() {
   return (
     <form
       action={formAction}
-      className="w-full bg-red-300 rounded-xl flex flex-col gap-8 justify-center p-20"
+      className="w-full bg-red-300 rounded-xl flex flex-col gap-8 justify-center p-10"
     >
-      <span className="">Dear Lama Dev,</span>
+      <span className="">Dear Kaung,</span>
       <textarea
         name="message"
         rows={4}

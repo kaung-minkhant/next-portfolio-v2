@@ -10,13 +10,13 @@ export default function Biography() {
           <ScrollMouse sizeSub={20} />
         </div>
       </div>
-      <p className="text-lg lg:leading-6 xl:leading-7 text-justify">
+      <p className="text-lg lg:leading-6 xl:leading-6 text-justify">
         My journey into the world of web development started during my studies
         in Electronic Engineering at Yangon Technological University. However,
         as life&apos;s twists and turns often do, I found myself drawn to the dynamic
         realm of web technologies amidst changing circumstances.
       </p>
-      <p className="text-lg lg:leading-6 xl:leading-7 text-justify">
+      <p className="text-lg lg:leading-6 xl:leading-6 text-justify">
         Although I hold a degree in Electrical and Electronic Engineering from
         Liverpool John Moores University, my true passion lies in crafting
         immersive digital experiences. With a penchant for tinkering with tools
