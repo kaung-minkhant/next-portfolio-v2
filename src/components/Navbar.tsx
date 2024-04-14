@@ -133,7 +133,7 @@ export default function NavBar() {
             >
               {menuItems.map((item) => (
                 <motion.div key={item.url} variants={listItemVariants}>
-                  <Link href={item.url}>{item.title}</Link>
+                  <Link href={item.url} onClick={() => setOpen(false)}>{item.title}</Link>
                 </motion.div>
               ))}
             </motion.div>

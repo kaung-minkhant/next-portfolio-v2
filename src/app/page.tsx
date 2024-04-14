@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div
       className="overlay flex flex-col lg:flex-row flex-grow px-4 sm:px-9 md:px-14 lg:px-20 xl:px-36 relative"
-      style={{
-        display: "none",
-      }}
+      // style={{
+      //   display: "none",
+      // }}
     >
       <div className="relative flex-grow lg:w-1/2 basis-0">
         <Image

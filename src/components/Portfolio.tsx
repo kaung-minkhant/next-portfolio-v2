@@ -71,7 +71,7 @@ export default function Portfolio() {
   return (
     <div
       className="overlay"
-      style={{ display: "none", flexDirection: "column" }}
+      style={{ flexDirection: "column" }}
     >
       <div className="h-[600vh] w-screen relative" ref={containerRef}>
         <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-6xl md:text-7xl lg:text-8xl">
