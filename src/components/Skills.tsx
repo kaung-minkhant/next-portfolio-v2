@@ -46,8 +46,8 @@ export default function Skills() {
       <motion.h1
         className="text-2xl font-bold"
         variants={skillVariants}
-        initial="initial"
-        animate="animate"
+        // initial="initial"
+        // animate="animate"
         // transition={{
         //   type: "spring",
         //   d
@@ -60,8 +60,8 @@ export default function Skills() {
       <motion.div
         className="flex gap-4 flex-wrap"
         variants={skillVariants}
-        initial="initial"
-        animate="animate"
+        // initial="initial"
+        // animate="animate"
       >
         {skills.map((skill) => (
           <Skill key={skill} skill={skill} />

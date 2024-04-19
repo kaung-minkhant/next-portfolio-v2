@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import TransitionProvider from "@/components/TransitionProvider";
 import NavBar from "@/components/Navbar";
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +17,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // const NavBar = dynamic(import("@/components/Navbar"))
   return (
     <html lang="en">
       <body className={`${inter.className} overflow-x-hidden`}>
-        <div className="h-24 nav-container relative z-[10]">
+        <div className="h-24 nav-container z-[10]">
           <NavBar />
         </div>
         <div className="min-h-[calc(100vh-6rem)] flex flex-col relative z-[0]">

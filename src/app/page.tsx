@@ -9,17 +9,17 @@ export default function Home() {
       //   display: "none",
       // }}
     >
-      <div className="relative flex-grow lg:w-1/2 basis-0">
+      <div className="relative flex-grow basis-0">
         <Image
           src={"/hero.png"}
           priority={true}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill
           alt={"hero image"}
-          className="object-contain"
+          className="object-contain mt-0 lg:-mt-[100px]"
         />
       </div>
-      <div className="flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-center flex-grow lg:w-1/2 basis-0">
+      <div className="flex flex-col gap-3 md:gap-6 lg:gap-8 items-start pt-20 md:justify-start lg:justify-center flex-grow basis-0 lg:basis-[100px]">
         <h1 className="text-3xl md:text-5xl font-bold">
           Hii. My name is Kaung Min Khant
         </h1>
