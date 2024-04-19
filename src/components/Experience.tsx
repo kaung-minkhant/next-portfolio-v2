@@ -18,7 +18,7 @@ export default function Experience() {
             type: "spring",
             mass: 1,
             stiffness: 80,
-            damping: 13,
+            damping: 16,
           },
         }
       : {},
@@ -46,8 +46,8 @@ export default function Experience() {
       <motion.h1
         className="text-2xl font-bold"
         variants={experienceVariants}
-        // initial="initial"
-        // animate="animate"
+        initial="initial"
+        animate="animate"
       >
         Experience
       </motion.h1>
@@ -56,8 +56,8 @@ export default function Experience() {
       <motion.div
         className=""
         variants={experienceVariants}
-        // initial="initial"
-        // animate="animate"
+        initial="initial"
+        animate="animate"
       >
         {experience.map((item, index) => (
           <ExperienceItem

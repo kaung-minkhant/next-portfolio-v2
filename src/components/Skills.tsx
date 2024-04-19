@@ -37,7 +37,13 @@ export default function Skills() {
     animate: isSkillInView
       ? {
           x: 0,
-          transition: { delay: 0.1, type: "spring", mass: 1, stiffness: 80, damping: 13 },
+          transition: {
+            delay: 0.1,
+            type: "spring",
+            mass: 1,
+            stiffness: 80,
+            damping: 16,
+          },
         }
       : {},
   };
@@ -46,8 +52,8 @@ export default function Skills() {
       <motion.h1
         className="text-2xl font-bold"
         variants={skillVariants}
-        // initial="initial"
-        // animate="animate"
+        initial="initial"
+        animate="animate"
         // transition={{
         //   type: "spring",
         //   d
@@ -60,8 +66,8 @@ export default function Skills() {
       <motion.div
         className="flex gap-4 flex-wrap"
         variants={skillVariants}
-        // initial="initial"
-        // animate="animate"
+        initial="initial"
+        animate="animate"
       >
         {skills.map((skill) => (
           <Skill key={skill} skill={skill} />
