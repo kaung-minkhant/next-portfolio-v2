@@ -98,7 +98,7 @@ export default function NavBar() {
   const listItemVariants = {
     closed: {
       x: -10,
-      // opacity: 0,
+      opacity: 0,
     },
     opened: {
       x: 0,
