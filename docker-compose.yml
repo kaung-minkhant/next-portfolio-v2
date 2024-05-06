@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   portfolio:
-    image: portfolio-prod-image
+    image: polarkaung1999/next-portfolio-v2-image:latest
     build:
       context: ./
       target: production

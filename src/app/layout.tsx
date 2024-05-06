@@ -4,6 +4,7 @@ import "./globals.css";
 import TransitionProvider from "@/components/TransitionProvider";
 import NavBar from "@/components/Navbar";
 import dynamic from "next/dynamic";
+import SlideTransition from "@/components/SlideTransition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,9 +25,14 @@ export default function RootLayout({
         <div className="h-24 nav-container z-[10]">
           <NavBar />
         </div>
-        <div className="min-h-[calc(100vh-6rem)] flex flex-col relative z-[0]">
+        {/* <div className="min-h-[calc(100vh-6rem)] flex flex-col relative z-[0]">
           {children}
-        </div>
+        </div> */}
+        {/* <div className=""> */}
+        <SlideTransition>
+          {children}
+        </SlideTransition>
+        {/* </div> */}
       </body>
     </html>
   );

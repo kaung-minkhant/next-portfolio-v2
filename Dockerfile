@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.19 as base
+FROM node:21-alpine3.18 as base
 RUN apk add --no-cache g++ make py3-pip libc6-compat
 WORKDIR /app
 COPY package*.json ./
